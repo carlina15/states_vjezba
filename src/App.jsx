@@ -2,14 +2,16 @@ import './App.css'
 import { Component } from 'react'
 import {UserClass, UserChildren, UserFunction} from './Users'
 
-const App = () => {
-  const [users, setUsers] = useState([
+export default function App() {
+  const initialUsers = [
     { name: 'Karla', age: 27 },
     { name: 'Ivan', age: 34 },
     { name: 'Sani', age: 31 },
-  ]);
+  ];
 
-  const [tekst, setTekst] = useState('Uvećaj godine');
+  const tekst = "Proizvoljan tekst";
+
+  const [users, setUsers] = useState(initialUsers);
 
   const uvecajGodine = () => {
     const newUsers = users.map(user => {
@@ -30,8 +32,5 @@ const App = () => {
     </>
   );
 };
-
-
-export default App
 
 
