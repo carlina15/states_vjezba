@@ -12,7 +12,7 @@ const App = () => {
   const [tekst, setTekst] = useState('Uvećaj godine');
 
   const uvecajGodine = () => {
-    const newUsers = users.map((user) => {
+    const newUsers = users.map(user => {
       return { ...user, age: user.age + 1 };
     });
     setUsers(newUsers);
