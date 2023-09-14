@@ -4,9 +4,9 @@ import {UserClass, UserChildren, UserFunction} from './Users'
 
 const App = () => {
   const [users, setUsers] = useState([
-    { name: 'Karla', years: 27 },
-    { name: 'Ivan', years: 34 },
-    { name: 'Sani', years: 31 },
+    { name: 'Karla', age: 27 },
+    { name: 'Ivan', age: 34 },
+    { name: 'Sani', age: 31 },
   ]);
 
   const [tekst, setTekst] = useState('Uvećaj godine');
