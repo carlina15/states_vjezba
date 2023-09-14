@@ -24,7 +24,7 @@ class App extends Component {
 
   uvecajGodine = () => {
     const newUsers = this.state.users.map(user => {
-      return {...user, years: user.years + 5}
+      return {...user, age: user.age + 1}
     })
     this.setState({users: newUsers})
   }
