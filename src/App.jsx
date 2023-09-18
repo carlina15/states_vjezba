@@ -1,6 +1,7 @@
 import './App.css';
-import { Component } from 'react';
+import { Component, useState } from 'react';
 import {UserClass, UserChildren, UserFunction} from './Users';
+import React from 'react';
 
 export default function App() {
   const initialUsers = [
@@ -18,7 +19,7 @@ export default function App() {
   const uvecajGodine = () => {
     setUsers(prevState => {
       const newUsers = prevState.map (user => {
-        return {...user, years: user.years + 1 }
+        return {...user, age: user.age + 1 }
     })
     return newUsers
     })
