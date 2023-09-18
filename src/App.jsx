@@ -6,10 +6,10 @@ export default function App() {
   const initialUsers = [
     { name: 'Karla', age: 27 },
     { name: 'Ivan', age: 34 },
-    { name: 'Sani', age: 31 },
+    { name: 'Sani', age: 32 },
   ];
 
-  const tekst = "Proizvoljan tekst";
+  const tekst = "Povećaj godine";
 
   const [users, setUsers] = useState(initialUsers);
 
