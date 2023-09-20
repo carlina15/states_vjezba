@@ -7,6 +7,7 @@ function App() {
   const [name, setName] = useState("")
   const [password, setPassword] = useState("")
   const [username, setUsername] = useState("")
+  const [isAlertVisibile, setIsAlertVisible] = useState(false)
 
   const handleNameChange = event => {
     setName(event.target.value)
@@ -20,6 +21,7 @@ function App() {
     setUsername(event.target.value)
   }
 
+  
   // useEffect(() => {
   //   console.log(name)
   // }, [name])
@@ -27,6 +29,14 @@ function App() {
   const handleSubmitForm = (event) => {
     event.preventDefault()
     alert("name: " + name + password + username)
+    setIsAlertVisible(true)
+    setName("")
+    setPassword("")
+    setUsername("")
+  }
+
+  const handleReset = () => {
+    setIsAlertVisible(false)
     setName("")
     setPassword("")
     setUsername("")
@@ -56,6 +66,9 @@ function App() {
           </label>
         </div>
         <input type="submit" value="Potvrdi" />
+        {isAlertVisibile && (
+          <button onClick={handleReset}>Reset</button>
+        )}
       </form>
     </>
   )
