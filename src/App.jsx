@@ -37,7 +37,7 @@ const promijeniIme = () => {
 };
 
 const dodajNovogKorisnika = () => {
-  const noviKorisnik = {id: users.length + 1, name: newName}
+  const noviKorisnik = {id: users.length + 1, name: newName, age: 0}
   setUsers((prevState) => [...prevState, noviKorisnik]);
 };
 
