@@ -5,9 +5,9 @@ import React from 'react';
 
 export default function App() {
   const initialUsers = [
-    { name: 'Karla', age: 27 },
-    { name: 'Ivan', age: 34 },
-    { name: 'Sani', age: 32 },
+    { id:1, name: 'Karla', age: 27 },
+    { id:2, name: 'Ivan', age: 34 },
+    { id:3, name: 'Sani', age: 32 },
   ];
 
   const tekst = "Uvećaj godine";
@@ -36,6 +36,11 @@ const promijeniIme = () => {
   );
 };
 
+const dodajNovogKorisnika = () => {
+  const noviKorisnik = {id: users.length + 1, name: newName, age:0}
+  setUsers((prevState) => [...prevState, noviKorisnik]);
+};
+
   return (
     <>
       <h1>State</h1>
@@ -45,14 +50,16 @@ const promijeniIme = () => {
         onChange={(Event) => setNewName(Event.target.value)}
        />
        <button onClick={promijeniIme}>Upiši novo ime</button>
-      <UserClass name={users[0].name} age={users[0].age} />
-      <UserFunction name={users[1].name} age={users[1].age} />
-      <UserChildren name={users[2].name} age={users[2].age}>
-        {tekst}
-      </UserChildren>
+       <button onClick={dodajNovogKorisnika}>Dodaj novog korisnika</button>
+
+       {users.map((user, index) => (
+        <div key={user.id}>
+          <UserFunction name={user.name} age={user.age} />
+        </div>
+      ))}
       <button onClick={uvecajGodine}>Godina više</button>
     </>
-  );
+  ); 
 };
 
 
